@@ -15,4 +15,6 @@ Detalle de rutas a vistas:
   
   -Formulario de notebooks -> http://127.0.0.1:8000/appUno/notebook/
   
+  -Búsqueda producto -> http://127.0.0.1:8000/appUno/busqueda-producto/
+  
   
