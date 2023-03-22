@@ -1,0 +1,35 @@
+{% extends 'AppUno/padre.html' %}
+
+{% block title %}
+
+TVs
+
+{% endblock title %}
+
+{% block contenido %}
+
+<section class="features-icons bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Formulario TVs</h3>
+                <p>Cargue un articulo.</p>
+                {% if form_tvs.errors %}
+                <p style="color: red">There is an error. Please try again.</p>
+                {% endif %}
+
+                <form action="{% url 'tv' %}" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{form_tvs.as_table}}
+                    </table>
+                    
+                    <input type="submit" value="Enviar"> 
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock contenido %}

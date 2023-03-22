@@ -1,0 +1,34 @@
+{% extends 'AppUno/padre.html' %}
+
+{% block title %}
+
+Smartphones
+
+{% endblock title %}
+
+{% block contenido %}
+
+<section class="features-icons bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Formulario Smartphones</h3>
+                <p>Cargue un articulo.</p>
+                {% if form_smartphones.errors %}
+                <p style="color: red">There is an error. Please try again.</p>
+                {% endif %}
+
+                <form action="{% url 'smartphone' %}" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{form_smartphones.as_table}}
+                    </table>
+                    
+                    <input type="submit" value="Enviar"> 
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock contenido %}
